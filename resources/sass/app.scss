@@ -1,0 +1,178 @@
+
+// Fonts
+// Variables
+@import "variables";
+
+
+@import "login";
+@import "wizard-2";
+@import "404";
+@import "metronic";
+
+@import
+    "skins/base-light",
+    "skins/menu-light",
+    "skins/brand-dark",
+    "skins/aside-dark";
+
+@import 
+    '~grapesjs/dist/css/grapes.min.css',
+    '~grapesjs-preset-newsletter/dist/grapesjs-preset-newsletter.css';
+
+.gq-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    color: #646c9a;
+}
+.divider{
+    border-right: 1px solid #ebedf2;
+}
+.form-group a.acc_link{
+    cursor: pointer;
+}
+.form-group a.acc_link:hover{
+    color: #5d78ff;
+}
+.kt-aside__brand-logo img {
+    width: 150px;
+}
+
+.kt-header-mobile .kt-header-mobile__logo img {
+    width: 100px;
+}
+
+.kt-avatar .kt-avatar__holder {
+    background-size: cover;
+    background-position: center;
+}
+
+.kt-timeline-v2 .kt-timeline-v2__items .kt-timeline-v2__item {
+    .kt-timeline-v2__item-time {
+        font-size: 13.9px;
+    }
+
+    .kt-timeline-v2__item-cricle > i {
+        font-size: 1.2rem;
+    }
+}
+
+.editor {
+    width: 400px;
+    max-width: 100%;
+    height: 80px;
+    overflow: auto;
+    white-space: pre-wrap;
+    border: 1px solid rgba(0,0,0,.3);
+    padding: .4em;
+}
+
+/** New UI **/
+
+.kt-aside {
+    background-color: #fff;
+    // box-shadow: 3px 0px 20px -3px rgba(0,0,0,0.14);
+    border-right: 1px solid #eff0f6;
+
+    &__brand {
+        background-color: #fff;
+    }
+
+    &-menu {
+        background-color: #fff;
+
+        .kt-menu__nav {
+            .kt-menu__item {
+                &.kt-menu__item--active {
+                    .kt-menu__link {
+                        background-color: #f8f8fb;  
+
+                        .kt-menu__link-icon {
+                            color: $dodger-blue;
+                        }
+
+                        .kt-menu__link-text {
+                            color: #676c7b;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &:not(.kt-menu__item--active){
+                        .kt-menu__link {
+                            background-color: #f8f8fb !important;  
+    
+                            .kt-menu__link-icon {
+                                color: $dodger-blue !important;
+                            }
+    
+                            .kt-menu__link-text {
+                                color: #676c7b !important;
+                            }
+                        }
+                    }
+                }
+
+                .kt-menu__link {
+                    .kt-menu__link-icon {
+                        color: #676c7b;
+                        flex: 0 0 40px;
+                        font-size: 2rem;
+
+                        img {
+                            height: 28px;
+                        }
+                    }
+
+                    .kt-menu__link-text {
+                        color: #676c7b;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kt-header-mobile {
+    background-color: #fff;
+}
+
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler:hover span,
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler span,
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler span::before, .kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler span::after,
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler:hover span::before, .kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toggler:hover span::after {
+    background: $dodger-blue;
+}
+
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__topbar-toggler i {
+    color: $dodger-blue;
+}
+
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__topbar-toggler:hover i {
+    color: darken($dodger-blue, 10%);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $dodger-blue;
+    border-color: $dodger-blue; 
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    color: #fff;
+    background-color: darken($dodger-blue, 10%);
+    border-color: darken($dodger-blue, 10%); 
+}
+
+@media (min-width: 1025px) {
+    .kt-header .kt-header-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link .kt-menu__link-text {
+        color: $dodger-blue;
+    }
+
+    .kt-header-menu .kt-menu__nav > .kt-menu__item:hover:not(.kt-menu__item--here):not(.kt-menu__item--active) > .kt-menu__link .kt-menu__link-text {
+        color: $dodger-blue;
+    }
+}
