@@ -32,6 +32,8 @@ export const routes = [
 
             { path: 'guests/addfields', component: FieldAdd },
 
+            { path: 'guests/addmany', component: Guest },
+
             { path: 'guests/addfields/:id', component: FieldUpdate },    
 
             { path: 'folios', component: Folio },     

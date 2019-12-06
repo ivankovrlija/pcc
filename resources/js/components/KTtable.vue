@@ -207,8 +207,8 @@ export default {
                         type: "remote",
                         pageSize: 10,
                         serverPaging: true,
-                        serverSorting: true,
-                        serverFiltering: true,
+                        serverSorting: false,
+                        serverFiltering: false,
                         saveState: {
                             cookie: true,
                             webstorage: true

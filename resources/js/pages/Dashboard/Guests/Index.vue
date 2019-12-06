@@ -10,6 +10,8 @@
                 >
                    New Contact
                 </router-link>
+
+                <a href="#" class="btn btn-label-brand btn-bold" @click.prevent="handleSeed">Add 10k Contacts</a>
             </template>
         </Subheader>
 
@@ -35,6 +37,7 @@
                         :candelete="true"
                         action_edit="/guests"
                         action_delete="/guests"
+                        :key="tableKey"
                     />
                 </div>
             </div>
@@ -55,6 +58,7 @@
                         :candelete="true"
                         action_edit="/guests"
                         action_delete="/guests"
+                        :key="tableKey"
                     />
                 </div>
             </div>
@@ -87,6 +91,7 @@ export default {
                 { label: 'Zip', value: 'zip' },
                 { label: 'City', value: 'city' },
             ],
+            tableKey: 0,
             importing: false
         }
     },
@@ -105,6 +110,98 @@ export default {
         new KTPortlet('hot-guests')
     },
     methods: {
+        handleSeed(){
+            this.$http.post('guests/addmany500')
+                .then(response => {
+                    //alert('success 1')
+                    new KTPortlet('my-guests')
+                    this.tableKey += 1
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+
+                    
+                    
+                })
+                    
+                    
+                })
+                .catch(error => {
+                    this.loading = false
+                    this.errors = Object.values(error.response.data.errors);
+                    this.errors = this.errors.flat()
+
+                    const content = {
+                        title: error.response.data.message,
+                        message: this.errors.map(function(error) {
+                            return `<li>${error}</li>`
+                        }).join('')
+                    }
+
+                    this.notification('danger', content)
+                })
+
+                
+
+
+
+        }
         
     }
 }

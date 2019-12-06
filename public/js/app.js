@@ -2061,8 +2061,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
             type: "remote",
             pageSize: 10,
             serverPaging: true,
-            serverSorting: true,
-            serverFiltering: true,
+            serverSorting: false,
+            serverFiltering: false,
             saveState: {
               cookie: true,
               webstorage: true
@@ -5212,6 +5212,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -5241,6 +5245,7 @@ __webpack_require__.r(__webpack_exports__);
         label: 'City',
         value: 'city'
       }],
+      tableKey: 0,
       importing: false
     };
   },
@@ -5258,7 +5263,47 @@ __webpack_require__.r(__webpack_exports__);
     new KTPortlet('my-guests');
     new KTPortlet('hot-guests');
   },
-  methods: {}
+  methods: {
+    handleSeed: function handleSeed() {
+      var _this = this;
+
+      this.$http.post('guests/addmany500').then(function (response) {
+        //alert('success 1')
+        new KTPortlet('my-guests');
+        _this.tableKey += 1;
+
+        _this.$http.post('guests/addmany1000').then(function (response) {
+          _this.$http.post('guests/addmany1000').then(function (response) {
+            _this.$http.post('guests/addmany1000').then(function (response) {
+              _this.$http.post('guests/addmany1000').then(function (response) {
+                _this.$http.post('guests/addmany1000').then(function (response) {
+                  _this.$http.post('guests/addmany1000').then(function (response) {
+                    _this.$http.post('guests/addmany1000').then(function (response) {
+                      _this.$http.post('guests/addmany1000').then(function (response) {
+                        _this.$http.post('guests/addmany1000').then(function (response) {});
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      })["catch"](function (error) {
+        _this.loading = false;
+        _this.errors = Object.values(error.response.data.errors);
+        _this.errors = _this.errors.flat();
+        var content = {
+          title: error.response.data.message,
+          message: _this.errors.map(function (error) {
+            return "<li>".concat(error, "</li>");
+          }).join('')
+        };
+
+        _this.notification('danger', content);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -30626,6 +30671,21 @@ var render = function() {
                     attrs: { to: "/guests/create" }
                   },
                   [_vm._v("\n               New Contact\n            ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-label-brand btn-bold",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.handleSeed($event)
+                      }
+                    }
+                  },
+                  [_vm._v("Add 10k Contacts")]
                 )
               ]
             },
@@ -30663,6 +30723,7 @@ var render = function() {
                   { staticClass: "kt-portlet__body" },
                   [
                     _c("KTtable", {
+                      key: _vm.tableKey,
                       attrs: {
                         guestcolumns: list.columns,
                         list: list,
@@ -30697,6 +30758,7 @@ var render = function() {
                 { staticClass: "kt-portlet__body" },
                 [
                   _c("KTtable", {
+                    key: _vm.tableKey,
                     attrs: {
                       list: { filter_by: "owned" },
                       route: "/api/datatable/guests",
@@ -50636,6 +50698,9 @@ var routes = [{
     path: 'guests/addfields',
     component: _pages_Dashboard_Guests_FieldUpdate_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
   }, {
+    path: 'guests/addmany',
+    component: _pages_Dashboard_Guests_Index_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
     path: 'guests/addfields/:id',
     component: _pages_Dashboard_Guests_FieldAdd_vue__WEBPACK_IMPORTED_MODULE_13__["default"]
   }, {
@@ -50957,8 +51022,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\kaye-final-final\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\kaye-final-final\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\kaye\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\kaye\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

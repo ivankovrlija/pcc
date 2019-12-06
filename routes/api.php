@@ -22,6 +22,9 @@ Route::group([ 'middleware' => 'jwt.auth' ], function($router) {
     Route::apiResource('guests', 'GuestController');
     Route::apiResource('folios', 'FolioController');
 
+    
+    Route::post('guests/addmany500', 'GuestController@addmany500');
+    Route::post('guests/addmany1000', 'GuestController@addmany1000');
     Route::post('folios/{id}', 'FolioController@addGuest');
     Route::post('guests/addfields', 'FieldController@addField');
     Route::get('guests/addfields/{id}', 'FieldController@updateField');

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Artisan;
 use App\Guest;
+use App\Field;
 use App\Folio;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -174,8 +177,8 @@ class GuestController extends Controller
         $datatable['meta']['page']    = $page;
         $datatable['meta']['pages']   = $paginated->lastPage();
         $datatable['meta']['perpage'] = $paginated->perPage();
-        $datatable['meta']['sort']    = $sort;
-        $datatable['meta']['filter']  = $filter_by;
+        //$datatable['meta']['sort']    = $sort;
+        //$datatable['meta']['filter']  = $filter_by;
         $datatable['meta']['total']   = $paginated->total();
         $datatable['meta']['field']   = 'id';
         return $datatable;
@@ -249,6 +252,34 @@ class GuestController extends Controller
         catch (ValidationException $e){
             return response()->json([ 'status' => 'error' ]);
         }
+    }
+
+    public function addmany500(){
+           
+            if (factory(Field::class, 208)->create()) {
+            
+            if ( factory(Guest::class, 208)->create() ) {
+            $response = [ 'status' => 'success' ];
+        } else {
+            $response = [ 'status' => 'error' ];
+        }
+        }
+
+        return $response;
+    }
+
+
+    public function addmany1000(){
+           
+            if (factory(Field::class, 1088)->create()) {
+            if ( factory(Guest::class, 1088)->create() ) {
+            $response = [ 'status' => 'success' ];
+        } else {
+            $response = [ 'status' => 'error' ];
+        }
+    }
+
+        return $response;
     }
 
 }
