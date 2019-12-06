@@ -4,12 +4,15 @@
 
 use App\Model;
 use App\Guest;
+use App\Field;
 use Faker\Generator as Faker;
 
 $factory->define(Guest::class, function (Faker $faker) {
     return [
         'user_id' => 1,
-        'field_id' => $faker->numberBetween($min = 1, $max = 10000),
+        'field_id' => function(){
+            return factory('App\Field')->create()->id;
+        },
         'guest_name' => $faker->name,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
