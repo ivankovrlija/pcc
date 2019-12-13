@@ -143,7 +143,25 @@ export default {
                     this.$http.post('guests/addmany1000')
                 .then(response => {
 
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
 
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+
+                    this.$http.post('guests/addmany1000')
+                .then(response => {
+                    
+                    
+                    
+                    
+                })
+                    
+                    
+                })
+                    
+                    
+                })
                     
                     
                 })

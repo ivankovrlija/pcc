@@ -271,8 +271,8 @@ class GuestController extends Controller
 
     public function addmany1000(){
            
-            if (factory(Field::class, 1088)->create()) {
-            if ( factory(Guest::class, 1088)->create() ) {
+            if (factory(Field::class, 816)->create()) {
+            if ( factory(Guest::class, 816)->create() ) {
             $response = [ 'status' => 'success' ];
         } else {
             $response = [ 'status' => 'error' ];
