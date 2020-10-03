@@ -1,7 +1,7 @@
 <template>
     <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop">
         <div class="kt-footer__copyright">
-        2019 &copy;&nbsp;<a href="https://www.guestquest.com/" target="_blank" class="kt-link"> Ivan Kovrlija</a>
+        2020 &copy;&nbsp;<a href="https://www.guestquest.com/" target="_blank" class="kt-link"> Ivan Kovrlija</a>
         </div>
     </div>
 </template>

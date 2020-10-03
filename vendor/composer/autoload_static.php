@@ -563,6 +563,7 @@ class ComposerStaticInit0367742d17a46325ff01f3391962e271
         'Abraham\\TwitterOAuth\\Util' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Util.php',
         'Abraham\\TwitterOAuth\\Util\\JsonDecoder' => __DIR__ . '/..' . '/abraham/twitteroauth/src/Util/JsonDecoder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Exports\\FoliosExport' => __DIR__ . '/../..' . '/app/Exports/FoliosExport.php',
         'App\\Exports\\GuestFolioListsExport' => __DIR__ . '/../..' . '/app/Exports/GuestFolioListsExport.php',

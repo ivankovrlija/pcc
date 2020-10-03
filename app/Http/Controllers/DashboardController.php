@@ -4,38 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\CarbonImmutable;
-use App\Guest;
-use App\Folio;
+use App\Course;
 
 class DashboardController extends Controller
 {
     public function index()
     {
 
-        $guest_data = $this->getGuestTotals();
-        $group_data = $this->getGroupTotals();
+        $course_data = $this->getCourseTotals();
 
         return response()->json([
-            'total_guests' => $guest_data,
-            'total_groups' => $group_data,
+            'total_courses' => $course_data
         ], 200);
     }
 
-    private function getGuestTotals()
+    private function getCourseTotals()
     {
 
-        $total_guests = Guest::all()->count();
+        $total_courses = Course::all()->count();
 
-        return $total_guests;
-    }
-
-
-    private function getGroupTotals()
-    {
-
-        $total_groups = Folio::all()->count();
-
-        return $total_groups;
+        return $total_courses;
     }
 
 }

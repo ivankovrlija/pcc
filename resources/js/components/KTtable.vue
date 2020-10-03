@@ -53,6 +53,7 @@ export default {
             required: true
         },
         guestcolumns: Object,
+        coursecolumns: Object,
         foliocolumns: Object,
         campaign: String,
         action_edit: String,
@@ -66,6 +67,42 @@ export default {
     computed: {
         currentUser() {
             return this.$store.getters['auth/currentUser']
+        },
+        courseColumns: function() {
+            let columns = [
+                {
+                    field: 'name',
+                    title: 'Name',
+                    template: raw => {
+                        return `<div class="kt-user-card-v2">
+                            <div class="kt-user-card-v2__details">
+                                <a class="kt-user-card-v2__name js-edit-action" href="/courses/${ raw.id }">${ raw.name }</a>
+                            </div>
+                        </div>`
+                    }
+                }, {
+                    field: 'type',
+                    title: 'Type'
+                }, {
+                    field: 'year',
+                    title: 'Year'
+                }
+            ]
+
+            if (this.coursecolumns) {                
+                let selectedColumns = [];
+                for (let key in this.coursecolumns) {
+                    if (this.coursecolumns[key]) {
+                        selectedColumns.push(key)
+                    }
+                }
+
+                columns = columns.filter(column => {
+                    return selectedColumns.includes(column.field)
+                })
+            }
+
+            return columns;
         },
         guestColumns: function() {
             let columns = [
@@ -153,6 +190,11 @@ export default {
 
             if (this.type === 'guests') {
                 columns = [...columns, ...this.guestColumns];
+            }
+
+
+            if (this.type === 'courses') {
+                columns = [...columns, ...this.courseColumns];
             }
             
             if (this.type === 'folios') {
@@ -290,7 +332,7 @@ export default {
                             self.$http.delete(target)
                                 .then(response => {
                                     if (response.data.status === 'success') {
-                                        swal.fire('Deleted!', 'Lead has been deleted.', 'success')
+                                        swal.fire('Deleted!', 'Course has been deleted.', 'success')
                                         self.createTable()
                                     }
                                 })

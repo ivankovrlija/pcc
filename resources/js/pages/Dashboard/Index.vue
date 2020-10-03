@@ -17,22 +17,8 @@
                                     <div class="kt-portlet__body kt-portlet__body--fluid">
                                         <div class="kt-widget26">
                                             <div class="kt-widget26__content">
-                                                <span class="kt-widget26__number">{{ data.total_guests }}</span>
-                                                <span class="kt-widget26__desc">Total Contacts</span>
-                                            </div>
-                                            <div class="kt-widget26__chart" style="height:100px; width: 230px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-12 col-lg-6">
-                                <div class="kt-portlet kt-portlet--height-fluid-half kt-portlet--border-bottom-brand">
-                                    <div class="kt-portlet__body kt-portlet__body--fluid">
-                                        <div class="kt-widget26">
-                                            <div class="kt-widget26__content">
-                                                <span class="kt-widget26__number">{{ data.total_groups }}</span>
-                                                <span class="kt-widget26__desc">Total Groups</span>
+                                                <span class="kt-widget26__number">{{ data.total_courses }}</span>
+                                                <span class="kt-widget26__desc">Total Courses</span>
                                             </div>
                                             <div class="kt-widget26__chart" style="height:100px; width: 230px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                                             </div>

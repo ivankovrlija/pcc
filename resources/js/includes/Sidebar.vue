@@ -121,8 +121,7 @@ export default {
             ],
             activeNavRoutes: [
                 { name: 'dashboard', label: 'Dashboard', url: '/', icon: homeIcon },
-                { name: 'guests', label: 'Contacts', url: '/guests', icon: userIcon },
-                { name: 'folios', label: 'Groups', url: '/folios', icon: groupFolderIcon }
+                { name: 'courses', label: 'Courses', url: '/courses', icon: groupIcon }
             ],
             // field: {
             //     id          : '',

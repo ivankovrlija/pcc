@@ -18,6 +18,7 @@ return array(
     'Abraham\\TwitterOAuth\\Util' => $vendorDir . '/abraham/twitteroauth/src/Util.php',
     'Abraham\\TwitterOAuth\\Util\\JsonDecoder' => $vendorDir . '/abraham/twitteroauth/src/Util/JsonDecoder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Course' => $baseDir . '/app/Course.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Exports\\FoliosExport' => $baseDir . '/app/Exports/FoliosExport.php',
     'App\\Exports\\GuestFolioListsExport' => $baseDir . '/app/Exports/GuestFolioListsExport.php',
